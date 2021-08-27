@@ -7,7 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import utility.TestEnvironment;
+import utilities.TestEnvironment;
 
 import java.net.MalformedURLException;
 
