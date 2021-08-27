@@ -7,16 +7,18 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import utility.TestEnvironment;
+
+import java.net.MalformedURLException;
 
 public class Hooks {
     private static final Logger LOGGER = LogManager.getLogger(Hooks.class);
     static WebDriver driver;
 
     @Before
-    public void openBrowser() {
+    public void openBrowser() throws MalformedURLException {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = TestEnvironment.selectTestExecutionEnvironment();
         LOGGER.info("Launch Chrome Browser");
     }
 
